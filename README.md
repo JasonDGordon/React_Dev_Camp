@@ -17,19 +17,15 @@ The focus is on **learning by doing**, with simple examples that build up over t
 react-dev-camp/
 │
 ├── notes/
-│   ├── session-1/
-│   │   └── presentation.md
-│   │
-│   ├── session-2/
-│   │   ├── presentation.md
-│   │   └── slides.md
-│   │
-│   ├── session-3/
-│   │   └── presentation.md
+│   ├── session 1.md
+│   ├── session 2.md
+│   ├── session 3.md
 │   │
 │
 ├── code/
 │   ├── session-1/
+|   |   ├── nodejs-example
+|   |   └── react-example
 │   │
 │   ├── session-2/
 │   │   ├── starter/
@@ -48,8 +44,7 @@ react-dev-camp/
 ### Structure Notes
 
 - `notes/` → All written material for sessions  
-  - `presentation.md` → presenter-friendly notes  
-  - `slides.md` → slide content (for sli.dev)
+  - `session x.md` → presenter-friendly notes  
 
 - `code/` → All runnable examples  
   - `starter/` → used to speed up live demos  
@@ -80,19 +75,9 @@ react-dev-camp/
 
 ---
 
-### 🟠 Session 3 – Structure + Data
-
-- Basic project structure  
-- Component organisation  
-- Separation of concerns  
-- Introduction to data fetching  
-- Starting a simple Pokédex-style app  
-
----
-
 ## 🛠️ Running the Code
 
-From any session folder:
+From any session folder in the code directory:
 
 ```bash
 npm install
