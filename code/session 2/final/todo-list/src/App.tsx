@@ -15,7 +15,7 @@ const App = () => {
     <div className="container">
       <input
         className="input"
-        onChange={(e) => setInput(e.target.value.trim())}
+        onChange={(e) => setInput(e.target.value)}
         value={input}
         placeholder="Add todo..."
       />
@@ -23,12 +23,13 @@ const App = () => {
       <button
         className="button"
         disabled={!input}
-        onClick={() =>
+        onClick={() => {
           setTodos([
             ...todos,
-            { id: todos.length + 1, text: input, done: false },
-          ])
-        }
+            { id: todos.length + 1, text: input.trim(), done: false },
+          ]);
+          setInput("");
+        }}
       >
         Add todo
       </button>
