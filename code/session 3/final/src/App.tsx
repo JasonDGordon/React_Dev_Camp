@@ -11,19 +11,25 @@ export default function App() {
   useEffect(() => {
     const fetchPokemon = async () => {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=20"
+        "https://pokeapi.co/api/v2/pokemon?limit=20",
       );
 
       const pokemonListData: PokemonListResult = await response.json();
 
-      const pokemonList: Pokemon[] = pokemonListData.results.map((pokemon: PokemonListItem) => ({
-        name: pokemon.name,
-      }));
-
+      const pokemonList: Pokemon[] = pokemonListData.results.map(
+        (pokemon: PokemonListItem) => ({
+          name: pokemon.name,
+        }),
+      );
+      console.log("Got my pokemon list");
       setPokemon(pokemonList);
     };
 
     fetchPokemon();
+    
+    console.log(
+      "This executes before the pokemonList is set because `fetchPokemon` is an async call",
+    );
   }, []);
 
   function addToParty(selectedPokemon: Pokemon) {
@@ -32,9 +38,9 @@ export default function App() {
       return;
     }
 
-    // I know you can add more than 1 of the same pokemon but I just wanted to show you this :P
+    // Right now we don't have a unique identifier, so we're not adding the same pokemon to the list
     const alreadyAdded = party.some(
-      (pokemon) => pokemon.name === selectedPokemon.name
+      (pokemon) => pokemon.name === selectedPokemon.name,
     );
 
     if (alreadyAdded) {
